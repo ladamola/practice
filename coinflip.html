@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Comparison</title>
+		<style>
+		</style>
+	</head>
+	<body>  
+    <button onclick="
+      guessBtn('heads')
+      "
+    >
+      Heads
+    </button>
+    <button onclick="
+      guessBtn('tails')
+    ">
+      Tails
+    </button>
+    <button onclick="
+      scores.wins = 0
+      scores.losses = 0
+      console.log(scores);
+    ">
+      Reset Scores
+    </button>
+		<script>
+      let result = '';
+      let guess = '';
+      let scores = JSON.parse(localStorage.getItem('scores')) || {
+        wins: 0,
+        losses: 0
+      }
+
+      function guessBtn(code){
+        const randomNumber = Math.random(); // to generate a number between 0.5 and 1. Meaning there's a chance of it being head of tail
+
+          if(code === 'heads'){ // passing the parameter such that if button is clicked it passes the parameter down the function to comapre 
+            guess = 'Heads'
+          }else if(code === 'tails'){
+            guess = 'Tails'
+          }
+
+        const coinFlip = randomNumber <= 0.5 ? result = 'Heads' : result = 'Tails';
+        const guessResult = coinFlip === guess ? 'You win' : 'You lost';
+
+          if (guessResult === 'You win'){
+            scores.wins += 1;
+          }else if (guessResult === 'You lost'){
+            scores.losses += 1;
+          }
+
+          localStorage.setItem('scores', JSON.stringify(scores));
+          alert(`${guessResult}, 
+Win: ${scores.wins} Loss: ${scores.losses}`);
+
+          console.log(scores)
+      }
+		</script>
+	</body>
+</html>
+
+
+

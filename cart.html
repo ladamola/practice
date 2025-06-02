@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Carting Quantity</title>
+		<style>
+		</style>
+	</head>
+	<body>
+		<p> 
+			Cart Quantity 
+		</p>
+		<button onclick="
+			displayCart()
+		">
+			Show Quantity
+		</button>
+		<button onclick="
+			updateCart(1)
+
+		">
+			Add to Cart
+		</button>
+		<button onclick= "
+			updateCart(2)
+			">
+			+2
+		</button>
+		<button onclick= "
+			updateCart(3)
+			">
+			+3
+		</button>
+		<button onclick="
+			updateCart(4)
+			">
+			+4
+		</button>
+		<button onclick="
+			updateCart(5)">
+			+5
+		</button>
+		<button onclick="
+			removeCart(1)
+			">
+			Remove from Cart
+		</button>
+		<button onclick="
+		removeCart(2);
+	">
+		-2
+	</button>
+	<button onclick="
+		removeCart(3);
+	">
+	-3
+</button>
+		<button onclick= "
+		resetCart()">
+			Reset Cart
+		</button>
+		<p class="js-cartUpdate"></p>
+		<script>
+			const cartParagraph = document.querySelector('.js-cartUpdate');
+			let cartQuantity = 0;
+
+		
+			function updateCart(num){
+				if (cartQuantity + num > 10){
+					alert(`The cart is full`);
+					return;
+				}
+					cartQuantity += num
+					displayCart();
+			}	
+			function removeCart(num){
+				if(cartQuantity - num < 0){
+					return   alert('Not enough cart quantities');
+				}
+					cartQuantity -= num;
+					displayCart()
+			}
+			function resetCart(){
+				displayCart()
+				cartParagraph.innerHTML = `The cart has been reset
+Cart Quantity: ${cartQuantity * 0}`;
+				
+			}
+
+			function displayCart(){
+				cartParagraph.innerHTML = `Cart Quantity: ${cartQuantity}`;
+			}
+		</script>
+	</body>
+</html>
+
+
+

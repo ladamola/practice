@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Calculator</title>
+		<style>
+		</style>
+	</head>
+	<body>
+    <p class="calcDisplay" ></p>
+    <p>
+      <button onclick= "
+       calculation('1')
+        ">
+        1
+      </button>
+      <button onclick= "
+      calculation('2')
+      ">
+        2
+      </button>
+      <button onclick= "
+      calculation('3')
+      ">
+        3
+      </button>
+    </p>
+    <p>
+    <button onclick= "
+          calculation('4')
+          ">
+        4
+      </button>
+      <button onclick= "
+      calculation('5')
+      ">
+        5
+      </button>
+      <button onclick= "calculation('6')">
+      6
+      </button>
+    </p>
+    <p>
+    <button onclick= "
+       calculation('7')
+        ">
+        7
+      </button>
+      <button onclick= "
+      calculation('8')
+      ">
+        8
+      </button>
+      <button onclick= "
+      calculation('9')
+      ">
+        9
+      </button>
+    </p>
+    <button onclick= "
+      calculation(' + ')
+      ">
+      +
+    </button>
+    <button onclick= "
+    calculation(' - ')
+    ">
+    -
+  </button>
+    <button onclick= "
+      result()
+    ">
+      =
+    </button>
+		<script>
+			 let cartQuantity = '';
+       const displayCalc = document.querySelector('.calcDisplay');
+
+       if (displayCalc.innerHTML === ''){
+        displayCalc.innerHTML = localStorage.getItem('calculator')
+      } else{
+      displayCalc.innerHTML = `${cartQuantity}`;
+    }
+      function calculation(num){
+        cartQuantity += num 
+        displayCalculation()
+      } 
+
+      function result(){
+        cartQuantity = eval(cartQuantity);
+        localStorage.setItem('calculator', cartQuantity.toString());
+        displayCalculation();
+      }
+      
+
+      function displayCalculation (){
+          displayCalc.innerHTML = `${cartQuantity}`;
+        
+        console.log(localStorage.getItem('calculator'));
+    }
+		</script>
+	</body>
+</html>
+
+
+

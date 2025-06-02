@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Comparison</title>
+		<style>
+		</style>
+	</head>
+	<body>  
+    
+		<script>
+      const hour = 15;
+      const name= 'Damola'
+      if(hour>=6 && hour<12){
+        console.log(`Good Morning ${name}!`);
+      }else if(hour>=13 && hour<17){
+        console.log(`Good Afternoon ${name}!`);
+      }else{
+        console.log(`Good Night ${name}!`);
+      }
+
+      const age= 66;
+      const isHoliday = true;
+      // if(age<=5 || age>=65){
+      //   console.log('Discount')
+      // }else{
+      //   console.log('No Discount')
+      // }
+      const ageConfirmation = age <= 5 || age >= 65;
+      const holidayConfirmation = ageConfirmation && !isHoliday !== true;
+      const discountConfirmation = holidayConfirmation ? 'Discount' : 'No Discount';
+      console.log(discountConfirmation);
+
+      
+		</script>
+	</body>
+</html>
+
+
+

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Objects</title>
+		<style>
+		</style>
+	</head>
+	<body>  
+    
+		<script>
+      const products ={
+				name: 'Basketball',
+				price: 2095
+      }
+			const products1 ={
+				name: 'Basketball',
+				price: 2095
+      }
+			// products.price += 500; // usng dot notation to edit the product
+
+			products['delivery time'] = '3 days'; // using bracket notation to update the object
+
+			function comparePrice(p1, p2){
+				p1.price > p2.price ? console.log(p2) : console.log(p1);
+			}
+			
+			function isSameProduct(p1, p2){
+				const firstProduct = p1;
+				const secondProduct = p2;
+				if (firstProduct.name === secondProduct.name){
+					return console.log(true)
+				}else{
+					return console.log(false);
+				}
+			}
+			isSameProduct(products,products1);
+			
+		</script>
+	</body>
+</html>
+
+
+

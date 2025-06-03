@@ -3,13 +3,33 @@
 	<head>
 		<title>Price Calculator</title>
 		<style>
+      .head{
+        font-size: 20px;
+      }
+      .calcInput{
+        padding: 10px;
+        font-size: 15px;
+      }
+      .calcBtn{
+        padding: 12px 20px;
+        font-size: 15px;
+        border: none;
+        background-color: rgb(19, 172, 19);
+        color: white
+      }
+      .calcpErr{
+        color: red;
+      }
 		</style>
 	</head>
 	<body>  
-      <p> Amazon Shipping Calculator</p>
-      <input placeholder="Cost of order" class="calculator" onkeydown="keypress(event)" />
+      <p class="head"> Amazon Shipping Calculator</p>
+      <p>
+        <input placeholder="Cost of order" class="calculator calcInput" onkeydown="keypress(event)" />
+        <button onclick="priceCalc()" class="calcBtn">Calculate</button>
+      </p>
       <p class="calcP"></p>
-      <button onclick="priceCalc()">Calculate</button>
+     
 		<script>
       function keypress(event){
         if (event.key === 'Enter'){
@@ -20,6 +40,10 @@
       const calcElement = document.querySelector(".calculator");
       let calcPElement = document.querySelector('.calcP');
       calcPElement.innerHTML = calcElement.value < 40 ? `$${Math.round((Number(calcElement.value)  + 10)* 100) / 100}`  : '$' + calcElement.value
+      if(calcElement.value < 0 ){
+        calcPElement.classList.add('calcpErr')
+        calcPElement.innerHTML = `Error: Cost cannot be less than $0`
+      }
      }
 		</script>
 	</body>

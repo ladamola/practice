@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Arrays</title>
+  </head>
+  <body>
+    <p>
+      Todo List
+    </p>
+    <p>
+      <input placeholder="Todo Name" class="inputTodo"/><button onclick="addTodo()">Add</button>
+    </p>
+    <div class="js-todo">
+    </div>
+  </body>
+  <script>
+    const todoList = ['make dinner', 'wash dishes'];
+    const toDoList = document.querySelector('.js-todo');
+
+    updateArray();
+
+    function updateArray(){
+      let updatedHTML = ''; // Accumulator Pattern
+
+    for(i=0; i < todoList.length; i++){
+        const toDo = todoList[i];
+        const list = `<p> ${toDo}</p>`;  
+         updatedHTML+= list;
+    }
+    toDoList.innerHTML = updatedHTML;
+
+    }
+    
+   
+ function addTodo(){  
+    const inputTodo = document.querySelector('.inputTodo');
+    const todoInput = inputTodo.value;
+   todoList.push(todoInput); 
+
+   inputTodo.value = ''
+   
+   updateArray();
+ }
+
+    
+   
+    
+  </script>
+</html>

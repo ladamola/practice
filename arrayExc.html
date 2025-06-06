@@ -15,8 +15,100 @@
       console.log(array[arr]);
     }
     
+    let arrAccumulator = [];
+
     function arraySwap(array){
-      array.
+      let arrLast = array.length - 1;
+      let arrFirst = array.length - array.length;
+      let remArr = array.splice(1, array.length - 2);
+
+      arrAccumulator = remArr;
+      arrAccumulator.push(array[arrFirst]);
+      arrAccumulator.unshift(array[array.length - 1]);      
+    }
+    arraySwap([0,1,2,3,4]);
+    arraySwap(['hi', 'hey', 'good morning', 'whats up']);
+  
+    function loop(){
+      for(i=0; i <= 10; i+=2){
+      console.log(i);
+    }
+    }
+
+    // let i = 0;
+
+    // while(i <= 10){
+    // //  console.log(i)
+    //   i+=2
+    // } 
+
+    function reverseLoop(){
+      for(i=5; i >= 0; i--){
+        console.log(i);
+      }
+    }
+    
+    // let r = 5;
+    // while(r >= 0){
+    //   // console.log(r--);
+    // }
+    
+    // let arrAdd = [];
+    // let array = [1,2,3] // loop that adds 1 to the number
+
+    // for(i=0; i < array.length; i++){ 
+    //   result = array[i] + 1;
+    //   arrAdd.push(result)
+    // }
+    // console.log(arrAdd)
+
+
+    // let arrAddOne = []; //function that takes an array parameters and add 1 to it
+    // function addOne(array){
+    //   for(i=0; i < array.length; i++){
+    //     let result = array[i] + 1;
+    //     arrAddOne.push(result)
+    //     }
+      
+    // }
+    // addOne([0,1,2,3,4,5]);
+    // console.log(arrAddOne)
+
+    // let arrNum = []
+    // function addNum(array, num){   
+    //   for(i=0; i < array.length; i++){
+    //     result = array[i] + num;
+    //     arrNum.push(result);
+    //   }
+    //   console.log(arrNum);
+    // }
+
+    // addNum([0,1,2,3,4,5], 8); //function that takes two parameters and adds whatever the next parameter is 
+
+    // let addArray = [] //function that takes two array parameters and adds em togerther
+    // function addArrays(arr1, arr2){
+    //   for(i=0; i < arr1.length; i++){
+    //     let result = arr1[i] + arr2[i];
+    //     addArray.push(result);
+    //   }
+    //   console.log(addArray);
+    // }
+
+    // addArrays([1,2,3], [2,3,4]);
+
+    // let num = [] // take an input of array and return only the nunbers that are positive
+
+    // function countPostive(nums){ 
+    //   for(i=0; i < nums.length; i++){
+    //    let result = nums[i] > 0 ? num.push(nums[i]) : ''
+    //   }
+    //   console.log(num.length);
+    // }
+
+    // countPostive([-2,-3,5, 7, 10]);
+
+    function miniMax(){
+
     }
   </script>
 </html>

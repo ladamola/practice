@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>TO-DO</title>
+  </head>
+  <body>
+    ToDO List
+    <p>
+      <input placeholder="To-Do name" type="text" class="js-input"/>
+      <input type="date" class="js-date"/>
+      <button class="js-add-btn">Add</button>
+    </p>
+    <div class="js-task">
+
+    </div>
+  </body>
+  <script>
+    const toDoList = document.querySelector('.js-input');
+    const date = document.querySelector('.js-date');
+    const task = document.querySelector('.js-task');
+    const addTodo = ['make dinner', 'wash dishes'];
+
+    function deleteBtn(){
+            console.log('its working')
+            console.log(addTodo.splice(1,1))
+            }
+    
+    function todoList(){
+      for(i = 0; i < addTodo.length; i++){
+        const list = addTodo[i];
+         
+        task.innerHTML += `
+        <p>
+            ${list}
+            ${date.innerHTML = `2024-03-21`}
+            <button onclick= "deleteBtn()"> 
+              Delete
+            </button>
+          </p>`
+        
+      }
+      
+    
+    }
+    
+    todoList()
+    
+  </script>
+</html>

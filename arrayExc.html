@@ -105,10 +105,55 @@
     //   console.log(num.length);
     // }
 
-    // countPostive([-2,-3,5, 7, 10]);
+    //countPostive([-2,-3, 15, 10, 8]);
+    
+    // const minMaxResult = {
+    //   min: arr[0],
+    //   max: arr[0]
+    // }
 
-    function miniMax(){
+  
+  //   function minMax(arr){
+  //     const arrMinMax = {
+  //       min: arr[0],
+  //       max: arr[0]
+  //     }
+  //     if(arr.length === 0){
+  //         arrMinMax.min = null;
+  //         arrMinMax.max = null;
+  //       }
 
+  //     for(i = 0; i < arr.length; i++){
+  //       let arrValue = arr[i];
+       
+  //       if(arrValue < arrMinMax.min){
+  //         arrMinMax.min = arrValue;
+  //       }
+  //       if(arrValue > arrMinMax.max){
+  //         arrMinMax.max = arrValue
+  //       }
+  //     }
+  //     console.log(arrMinMax)
+  // }
+
+  //   minMax([3]);
+
+function countWords(word){
+  const wordObject = {
+
+  }
+  for(i = 0; i < word.length; i++){
+    let value = word[i];
+    
+    if(!wordObject[value]){
+      wordObject[value] = 1
+    }else{
+      wordObject[value]++
     }
+  }
+  console.log(wordObject)
+}
+  countWords(['hi', 'hey', 'good morning', 'hey', 'damola', 'hi'])
+    
   </script>
 </html>

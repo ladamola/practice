@@ -8,7 +8,7 @@
     <p>
       <input placeholder="To-Do name" type="text" class="js-input"/>
       <input type="date" class="js-date"/>
-      <button class="js-add-btn" onclick="todoList()">Add</button>
+      <button class="js-add-btn" onclick="addList()">Add</button>
     </p>
     <div class="js-task">
 
@@ -19,37 +19,43 @@
     const date = document.querySelector('.js-date');
     const task = document.querySelector('.js-task');
     const addTodo = [{tasks:'make dinner', date: '2024-03-21'}, {tasks: 'wash dishes', date: '2024-03-22'}];
-  
-
-
     
-    
-    function todoList(){
-      const inputValue = toDoList.value;
-      const inputDate = date.value;
-      let objAccumulator = []; 
 
-      if(inputValue != '' && inputDate != ''){
-        addTodo.push({tasks:inputValue, date: inputDate});
-      }
-      function deleteBtn(){
+    function deleteBtn(){
             console.log('its working');
-            addTodo.splice(i, 1)
+            console.log(addTodo.splice(1,1))
+            todoList()
         }
+    
+
+
+    function addList (){
+    const inputValue = toDoList.value;
+    const inputDate = date.value;
+    if(inputValue != '' && inputDate != ''){
+      addTodo.push({tasks: inputValue, date: inputDate})
+    }
+    todoList()
+  }
+
+    function todoList(){
+      let objAccumulator = []; 
       for(i = 0; i < addTodo.length; i++){
         const list = addTodo[i];
-        
         objAccumulator += `
         <p>
             ${list.tasks}
             ${date.innerHTML = list.date}
-            <button onclick = "${deleteBtn()}"> 
+            <button onclick = "
+            addTodo.splice(${i},1)
+            todoList()
+          "> 
               Delete
             </button>
           </p>`
           console.log(list);
-          
       }  
+      
       task.innerHTML = objAccumulator
     }
     
